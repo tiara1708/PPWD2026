@@ -1,91 +1,118 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portofolio Saya</title>
-
+    <title>Portfolio Tiara</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
-    <!-- Navigasi -->
+<nav>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
 
-    <nav>
+<!-- COVER -->
+<section class="cover">
 
-        <div class="container">
+    <div class="cover-paper">
 
-            <div class="logo">MyPortofolio</div>
+        <div class="tape"></div>
 
-            <ul class="nav-links">
+        <div class="cover-left">
+            <p class="mini-title">WELCOME TO MY</p>
+            <h1>Portfolio</h1>
 
-                <li><a href="index.html" class="active">Home</a></li>
+            <div class="name">
+                Tiara Maritza Sarani
+            </div>
 
-                <li><a href="about.html">About</a></li>
+            <p>
+                "Everything you lost
+                is a step you take"
+            </p>
 
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-
+            <a href="#experience" class="button">
+                Explore My Story →
+            </a>
         </div>
 
-    </nav>
+        <div class="cover-photo">
+            <img src="image/foto.webp" alt="Foto Tiara">
+            <span>that's me!</span>
+        </div>
 
-    <!-- Hero Section -->
+        <div class="sticker">✦</div>
+        <div class="heart">♡</div>
 
-    <section class="hero">
+    </div>
 
-        <div class="container">
+</section>
 
-            <div class="hero-content">
 
-                <h1>Halo, Saya <span id="typing-text"></span></h1>
+<!-- EXPERIENCE -->
+<section id="experience">
 
-                <p>Mahasiswa Sistem Informasi</p>
+    <div class="paper">
 
-                <a href="contact.html" class="btn">Hubungi Saya</a>
+        <div class="heading">
+            <h2>Experience & Activities</h2>
+        </div>
 
+        <div class="activity-list">
+
+            <div class="activity" onclick="showDetail(0)">
+                <img src="image/kepanitiaan.webp" alt="Kepanitiaan">
+                <div>
+                    <small>01</small>
+                    <h3>Teamwork, responsibility, and event experience.</h3>
+                </div>
+            </div>
+
+            <div class="activity" onclick="showDetail(1)">
+                <img src="image/mengajar.webp" alt="Mengajar">
+                <div>
+                    <small>02</small>
+                    <h3>Sharing knowledge and helping others learn.</h3>
+                </div>
+            </div>
+
+            <div class="activity" onclick="showDetail(2)">
+                <img src="image/berjualan.webp" alt="Berjualan">
+                <div>
+                    <small>03</small>
+                    <h3>Communication, customer service, and marketing</h3>
+                </div>
+            </div>
+
+            <div class="activity" onclick="showDetail(3)">
+                <img src="image/kreativitas.webp" alt="Kreativitas">
+                <div>
+                    <small>04</small>
+                    <h3>Creativity, patience, and attention to detail.</h3>
+                </div>
             </div>
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- Proyek Saya -->
+</section>
 
-    <section class="projects">
+<!-- POP UP -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeDetail()">×</span>
+        <img id="modalImage">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
 
-        <div class="container">
-
-            <h2>Proyek Saya</h2>
-
-            <div class="project-grid" id="project-grid">
-
-                <!-- Data proyek akan diisi otomatis oleh JavaScript. -->
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>&copy; 2026 MyPortofolio</p>
-
-    </footer>
-
-    <script src="js/main.js"></script>
-
+<script src="js/main.js"></script>
 </body>
-
 </html>
