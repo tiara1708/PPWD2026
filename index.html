@@ -10,7 +10,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7bebefa color #333;
+            background-color: #f7bebefa;
+            color: #333;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -46,7 +47,7 @@
             background-color: #f8f9fa;
         }
 
-        nav.tab-btn {
+        button.tab-btn {
             flex: 1;
             background: none;
             border: none;
@@ -58,7 +59,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        button.tab-btn hover {
+        button.tab-btn:hover {
             background-color: #fff;
 
         }
@@ -100,23 +101,22 @@
         <section class="tab-container">
 
             <nav class="tab-buttons">
-                <button class="tab-btn active-tab" id="Home" onclick="kunci('home', this)">Home</button>
-                <button class="tab-btn" id="Profil" onclick="kunci('profil', this)">Profil</button>
-                <button class="tab-btn" id="Kontak" onclick="kunci('kontak', this)">Kontak</button>
+                <button class="tab-btn active-tab" onclick="kunci('home', this)">Home</button>
+                <button class="tab-btn" onclick="kunci('profil', this)">Profil</button>
+                <button class="tab-btn" onclick="kunci('kontak', this)">Kontak</button>
             </nav>
 
-            <div class="tab-content active-content" id="Home">
+            <div class="tab-content active-content" id="home">
                 <h2>Home</h2>
                 <p>Ini adalah halaman utama. Konten ini hanya muncul ketika tab Home sedang aktif.</p>
             </div>
 
-            <div class="tab-content" id="Profil">
+            <div class="tab-content" id="profil">
                 <h2>Profil Pengguna</h2>
                 <p>Nama: Tiara Maritza Sarani<br>NIM: H1101251018<br>Jurusan: Sistem Informasi</p>
-                <p>Ini adalah halaman profil yang akan tersembunyi ketika Anda mengklik tab lain.</p>
             </div>
 
-            <div class="tab-content" id="Kontak">
+            <div class="tab-content" id="kontak">
                 <h2>Hubungi Kami</h2>
                 <p>Email: h1101251018@untan.ac.id<br>Telepon: 08985675718</p>
                 <p>Hubungin di atas.</p>
@@ -141,7 +141,6 @@
             document.getElementById(semua).classList.add('active-content');
             elemenTombol.classList.add('active-tab');
         }
-    </script>
 
     </script>
 </body>
