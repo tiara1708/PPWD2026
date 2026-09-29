@@ -1,65 +1,33 @@
-// ========== 1. TYPING EFFECT ==========
-
-const typingText = document.getElementById('typing-text');
-const names = ['Ahmad Fauzi', 'Web Developer', 'Mahasiswa SI'];
-let nameIndex = 0;
-
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-    const currentName = names[nameIndex];
-
-    if (isDeleting) {
-        typingText.textContent = currentName.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentName.substring(0, charIndex + 1);
-        charIndex++;
+const activities = [
+    {
+        title: "Teamwork, responsibility, and event experience.",
+        image: "image/kepanitiaan.webp",
+        text: "Merupakan kegiatan yang memberikan banyak pengalaman serta pembelajaran "
+    },
+    {
+        title: "Sharing knowledge and helping others learn.",
+        image: "image/mengajar.webp",
+        text: "Memberikan pengalaman dalam menyampaikan materi, membimbing, dan berkomunikasi dengan orang lain."
+    },
+    {
+        title: "Communication, customer service, and marketing",
+        image: "image/berjualan.webp",
+        text: " Membantu saya belajar dalam menawarkan produk, melayani pelanggan, berkomunikasi, dan menjadi lebih percaya diri."
+    },
+    {
+        title: "Creativity, patience, and attention to detail",
+        image: "image/kreativitas.webp",
+        text: "Membuat kerajinan menjadi salah satu kegiatan yang membantu saya mengembangkan kreativitas dan ketelitian serta sebagai healing."
     }
-
-    let delay = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentName.length) {
-        delay = 2000; // Jeda saat teks selesai diketik
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        nameIndex = (nameIndex + 1) % names.length;
-        delay = 500; // Jeda sebelum mengetik kata baru
-    }
-
-    setTimeout(typeEffect, delay);
-}
-
-typeEffect(); // Mulai efek.
-
-// ========== 2. GENERATE PROJECT CARDS ==========
-
-const projects = [
-    { title: 'Website Profil', desc: 'Website profil dengan HTML & CSS', image:
-    'https://via.placeholder.com/300x200/2563eb/fff?text=Profil' },
-    { title: 'Kalkulator JS', desc: 'Kalkulator interaktif', image:
-    'https://via.placeholder.com/300x200/2563eb/fff?text=Kalkulator' },
-    { title: 'Form Interaktif', desc: 'Form pendaftaran dengan validasi', image:
-    'https://via.placeholder.com/300x200/2563eb/fff?text=Form' }
 ];
 
-const projectGrid = document.getElementById('project-grid');
+function showDetail(index) {
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("modalImage").src = activities[index].image;
+    document.getElementById("modalTitle").textContent = activities[index].title;
+    document.getElementById("modalText").textContent = activities[index].text;
+}
 
-projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'project-card';
-
-    card.innerHTML = `
-        <img src="${project.image}" alt="${project.title}">
-        <h3>${project.title}</h3>
-        <p>${project.desc}</p>
-    `;
-
-    card.addEventListener('click', () => {
-        alert(`Anda memilih proyek: ${project.title}`);
-    });
-
-    projectGrid.appendChild(card);
-});
+function closeDetail() {
+    document.getElementById("modal").style.display = "none";
+}
