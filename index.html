@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Navigasi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7bebefa color #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #f7bebefa;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 1rem;
+
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+
+        }
+
+        .tab-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        nav.tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            background-color: #f8f9fa;
+        }
+
+        nav.tab-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button.tab-btn hover {
+            background-color: #fff;
+
+        }
+
+        button.tab-btn.active-tab {
+            background-color: #f7bebefa;
+            color: white;
+            border-bottom: 3px solid #e8d1e5;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 30px;
+            background-color: white;
+        }
+
+        .tab-content.active-content {
+            display: block;
+        }
+
+        footer {
+            background-color: #f7bebefa;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1> Halaman Informasi</h1>
+        <p>Nama: Tiara Maritza Sarani | H1101251018</p>
+    </header>
+
+    <main>
+        <section class="tab-container">
+
+            <nav class="tab-buttons">
+                <button class="tab-btn active-tab" id="Home" onclick="kunci('home', this)">Home</button>
+                <button class="tab-btn" id="Profil" onclick="kunci('profil', this)">Profil</button>
+                <button class="tab-btn" id="Kontak" onclick="kunci('kontak', this)">Kontak</button>
+            </nav>
+
+            <div class="tab-content active-content" id="Home">
+                <h2>Home</h2>
+                <p>Ini adalah halaman utama. Konten ini hanya muncul ketika tab Home sedang aktif.</p>
+            </div>
+
+            <div class="tab-content" id="Profil">
+                <h2>Profil Pengguna</h2>
+                <p>Nama: Tiara Maritza Sarani<br>NIM: H1101251018<br>Jurusan: Sistem Informasi</p>
+                <p>Ini adalah halaman profil yang akan tersembunyi ketika Anda mengklik tab lain.</p>
+            </div>
+
+            <div class="tab-content" id="Kontak">
+                <h2>Hubungi Kami</h2>
+                <p>Email: h1101251018@untan.ac.id<br>Telepon: 08985675718</p>
+                <p>Hubungin di atas.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function kunci(semua, elemenTombol) {
+
+            const semuakonten = document.getElementsByClassName('tab-content');
+            const semuatombol = document.getElementsByClassName('tab-btn');
+
+            for (let i = 0; i < semuakonten.length; i++) {
+                semuakonten[i].classList.remove('active-content');
+            }
+
+            for (let j = 0; j < semuatombol.length; j++) {
+                semuatombol[j].classList.remove('active-tab');
+            }
+
+            document.getElementById(semua).classList.add('active-content');
+            elemenTombol.classList.add('active-tab');
+        }
+    </script>
+
+    </script>
+</body>
+
+</html>
